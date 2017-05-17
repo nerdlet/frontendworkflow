@@ -1,0 +1,22 @@
+
+DIFFERENT WAYS OF INSTALLING GRUNT
+
+ONE:
+    create your package.json
+
+    $ npm init
+
+    install grunt for this project, this will be installed under node_modules/. --save-dev will add this module to devDependency in your package.json
+
+    NOTE
+    Package name and folder name should not be the same.This will cause a conflict when installing grunt in your folder
+
+    $ npm install grunt --save-dev
+
+    then create gruntfile.js and run
+
+    $ grunt
+     
+ TWO
+
+

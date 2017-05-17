@@ -1,0 +1,65 @@
+GULP BASICS.STEP BY STEP INSTRUCTIONS
+
+This test file gives you a the commands that help  you when starting out with gulp
+
+Install gulp cli first using npm
+npm install gulp-cli -g
+
+
+
+Navigate to the project folder and type the following command: 
+npm init
+This creates a package.json file that includes infomation about your project like author,version,license and descripti
+
+Then install gulp using the following command:
+npm install -g gulp 
+OR
+install gulp in the folder of your project by running the following command/INSTALL LOCALLY
+npm install gulp --save-dev
+This is saves gulp as a dependacy.It is going to appear on the package.json file as a dependancy
+
+
+
+Create a gulpfile.js file that is used to tell gulp what task you need it to do for you.Such as ,convert a scss file to css file.For a particular task you want done by gulp,download a pluggin.Downloaded pluggins are stored in the node_modules folder.Eg for you to convert scss files to css,you need to download a pluggin gulp-sass using npm.
+Do this by typing this command:
+
+To run your task after entering the code on gruntfile.js,type this command:
+gulp default
+
+The dist folder contains the minifyed version of your code that goes online.App contains the local project on your folder
+
+HELPFULL SUMMARY INSTRUCTIONS
+
+npm install gulp-cli -g
+npm install gulp -D
+touch gulpfile.js
+gulp --help
+
+
+
+GULPFILE.JS TASK INSTRUCTIONS EXAMPLES
+
+var gulp = require('gulp');
+var pug = require('gulp-pug');
+var less = require('gulp-less');
+var minifyCSS = require('gulp-csso');
+
+gulp.task('html', function(){
+  return gulp.src('client/templates/*.pug')
+    .pipe(pug())
+    .pipe(gulp.dest('build/html'))
+});
+
+gulp.task('css', function(){
+  return gulp.src('client/templates/*.less')
+    .pipe(less())
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('build/css'))
+});
+
+gulp.task('default', [ 'html', 'css' ]);
+
+
+
+HELPFUL LINK
+https://travismaynard.com/writing/getting-started-with-gulp
